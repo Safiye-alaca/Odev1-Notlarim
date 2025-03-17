@@ -1,0 +1,86 @@
+>> Commit Nedir?
+Commit, yazılım geliştirme sürecinde yapılan değişikliklerin sürüm kontrol sistemine kaydedilmesini sağlayan bir işlemdir. Bu işlem, kodun belirli bir noktada kayıt altına alınmasını ve gerektiğinde önceki sürümlere geri dönülebilmesini sağlar.
+
+
+
+>> Branchleme Nedir?
+Branchleme, bir projede farklı kişilerin veya ekiplerin aynı anda farklı bölümler üzerinde çalışabilmesini sağlayan bir yöntemdir. Her birey veya ekip, kendi işine odaklanarak farklı "branch" (dal) adı verilen bir çalışma alanı oluşturur. Bu sayede, herkes kendi yaptığı değişiklikleri ana projeyi etkilemeden yapabilir. Daha sonra, yapılan işler birleştirilerek proje üzerinde gelişmeler sağlanabilir. Bu süreç, kodun karışmasını engeller ve paralel çalışmayı mümkün kılar.
+
+
+
+>> Git add Komutu Nedir?
+Git add, çalışma klasöründe yaptığınız değişiklikleri sürüm kontrol sistemine eklemek için kullanılan bir komuttur. Yani, henüz commit yapmadığınızda, üzerinde değişiklik yaptığınız dosyaları git'e eklemek için git add komutunu kullanırsınız. Bu işlem, dosyaları "sahiplendirme" gibi düşünülebilir; değişiklikler kaydedilmeden önce git'e neyi commit edeceğinizi belirtmiş olursunuz. Yani, git add, değişikliklerinizi hazırlamak için bir adımken, gerçek kayıt işlemi git commit komutuyla yapılır.
+
+
+
+>> git commit Komutu Nedir?
+git commit, sürüm kontrol sistemine yapılan değişiklikleri kaydetmek için kullanılan bir komuttur. Bu komut, daha önce git add ile eklediğiniz dosya değişikliklerini bir sürüm olarak kaydeder ve bu sürüme bir açıklama eklemenizi sağlar. Yani, commit işlemi, kodda yapılan her bir önemli değişikliğin kaydedilmesi, sürüm geçmişine eklenmesi ve ileride geri dönülmesi için bir "an" oluşturur. Commit açıklamaları, yapılan değişikliklerin ne olduğunu ve neden yapıldığını anlatan notlar eklemenizi sağlar. Bu şekilde, projedeki her bir değişiklik tarihsel bir kayda dönüşür.
+
+
+
+>> Repository Nedir?
+Repository (veya kısaca repo), bir projedeki tüm dosyaların ve sürüm geçmişinin saklandığı yerdir. Yani, commitlediğiniz veriler ve projedeki tüm değişiklikler repository içinde depolanır. Repository, projenizin tamamını içeren bir "veritabanı" gibi çalışır; burada tüm dosyalar, commit geçmişi, branch'ler ve diğer sürüm kontrol bilgileri bulunur. Git üzerinde bir repository oluşturduğunuzda, bu repository, projedeki tüm verilerinizi ve geçmişini yönetir.
+
+
+
+>>git status Komutu Nedir?
+git status komutunu, Git ile bağlantısının olup olmadığını bilmediğimiz klasörlerde çalıştırarak o klasörün bir Git repository'si olup olmadığını kontrol ederiz. Eğer klasör bir repository ise, dosyaların sürüm kontrolündeki durumunu gösterir. Ancak, bir dosya üzerinde birden fazla kez Git aktif edilirse, arka planda karışıklıklar yaşanabilir. Bu yüzden, status komutunu kullanarak hangi dosyaların Git tarafından takip edildiğini ve hangi dosyaların değişiklik yaptığını net bir şekilde görmemiz önemlidir.
+
+
+
+>> ls -la ve gizli dosyalar :
+Git ile bağlantı kurarken, repository içinde gizli dosyalar bulunur ve bunlar genellikle .git adını taşır. Bu gizli dosyaları görüntülemek için ls -la komutu kullanılabilir. Örneğin, .git dosyasına erişmek için cd .git komutuyla bu klasöre girip, ls komutuyla içeriğini görebiliriz. Eğer yanlışlıkla .git dosyasını silersek, rm -rf .git komutuyla bu dosyayı kaldırabiliriz. Bu durumda, git status komutu çalıştırıldığında, Git bağlantısı kaybolur çünkü Git, .git dosyası üzerinden repository'yi takip eder. Bu sorunu çözmek için, git init komutunu çalıştırarak repository'yi yeniden başlatabilir ve bağlantıyı tekrar kurabiliriz.
+
+
+
+>> Insertions ve Deletions Ne Demek? 
+"Insertions" (eklemeler) ve "Deletions" (silinmeler), dosya içeriklerinde yapılan değişiklikleri ifade eder. Insertions, bir dosyaya yeni satırların eklenmesi anlamına gelir, yani dosyanın mevcut içeriğine yeni bilgiler eklenir. Deletions ise, dosyadan bazı satırların silinmesi anlamına gelir, yani dosyanın mevcut içeriğinden bazı bölümler çıkarılır. Bu terimler, genellikle bir dosyanın geçmişindeki değişiklikleri takip etmek için kullanılır ve Git gibi sürüm kontrol sistemlerinde hangi satırların eklendiği veya silindiği hakkında bilgi verir. Bunlar commit atıldıktan sonra çıkan ifadelerin açıklamalarıdır.
+
+
+
+>> gitignore Nedir?
+* Git ile çalışırken, bazı dosyaların sürüm kontrolüne dahil edilmesini istemeyebiliriz. Bu durumda .gitignore dosyası devreye girer. Örneğin, bir dosyanın kimse tarafından görünmesini istemiyorsak, o dosyayı hiç git add gizli.txt gibi komutlarla eklemeyiz. Ancak, git add . komutunu kullandığımızda, o dosya da eklenmiş olur. Bunu engellemek için, .gitignore adında bir dosya oluştururuz ve içine gizlemek istediğimiz dosyaların isimlerini yazarız. Bu sayede, o dosyalar Git tarafından göz ardı edilir ve sürüm kontrolüne dahil edilmez. .gitignore dosyasının adı sabittir ve her projede aynı şekilde kullanılır.
+* gitignore templete hangi dil ile uğraşıyorsak onun ismini de yazarak bir arama yaparsak bu gizli dosyaya ne koymamız gerektiğini açıklayan bir github hesabı karşımıza gelir. Her dil düzeyine göre bakılabilir.
+
+
+
+>> git log :
+Master: Git'teki ana dal (branch) anlamına gelir. Genellikle proje ana hattı olarak kabul edilir ve çoğu zaman bu dalda yapılan değişiklikler yayımlanır veya ana proje haline getirilir.
+
+Head: Git'teki en son yapılan işlemi gösterir. Yani, hangi commit’in şu anda aktif olduğunu belirtir. "Head", son commit’in bulunduğu yeri işaret eder.
+
+Fark: "Master", ana dalı ifade ederken, "Head" ise aktif olarak üzerinde çalıştığınız commit’in işaretçisidir. Yani, "Head" güncel durumu gösterirken, "Master" ana dalı temsil eder.
+
+
+
+>> Branch Nedir?
+Branch (Dal): Git'te, bir proje üzerinde paralel olarak çalışabilmenizi sağlayan bir özelliktir. Yani, ana projeyi bozmadan yeni özellikler ekleyebilir veya değişiklikler yapabilirsiniz. Ana dal (genellikle "master" veya "main" olarak adlandırılır) dışında farklı dallar (branch'ler) oluşturabilir, üzerinde çalışabilir ve sonunda bu dalları ana dala (merge ederek) dahil edebilirsiniz. Bu sayede, projede birbirinden bağımsız farklı işler yapılabilir.
+
+
+
+>> Git Merge Nedir?
+ İki farklı dalı birleştirmek için kullanılan bir komuttur. Örneğin, özellik eklediğin bir dalı (feature branch) ana dala (master/main) dahil etmek için kullanılır. Bu işlem, iki dal arasındaki farkları birleştirir.
+
+
+
+>> Fast Forward Nedir?
+Eğer ana dalda hiç yeni değişiklik yapılmadıysa ve özellik dalındaki tüm değişiklikler, ana dalın son halinin üstüne eklenebiliyorsa, Git "fast forward" dediğimiz şekilde, sadece bir ekleme yapar ve yeni birleştirilmiş bir commit oluşturmaz.
+
+
+
+>> conflict Nedir? 
+Bir branch oluşturup üzerinde değişiklikler yaptıktan sonra, master branch'inde aynı dosyayı silip yeni bir dosya oluşturduğunuzda, branch'leri birleştirmeye çalıştığınızda çakışmalar (conflict) oluşabilir. Git, bu durumda çakışmaların olduğunu belirterek hangi dosyaların ve satırların sorunlu olduğunu gösterir. Bu çakışmaları çözmek için, Sublime Text gibi bir editörde çakışmalı dosyaları açar, her iki branch'teki değişiklikleri gözden geçirip birleştirirsiniz. Düzenlemeleri kaydettikten sonra git add . komutunu kullanarak değişiklikleri ekler, ardından commit işlemi ile çakışmayı çözmüş olursunuz.
+
+
+
+>> Stash Nedir?
+* Stash, Git'in mevcut çalışma alanındaki değişikliklerinizi geçici olarak saklamanızı sağlayan bir özelliktir. Bu özellik, yaptığınız değişiklikleri kaybetmeden başka bir branch'e geçiş yapmanıza olanak tanır. Yani, üzerinde çalıştığınız dosyaları kaydetmeden ve commit yapmadan, çalışma alanınızı temizleyebilir ve başka bir branch'te işlem yapabilirsiniz.
+
+* Örneğin, bir branch'te çalışmalar yaparken, bu değişikliklerin master branch'i etkilemeyecek bir noktada olduğunu düşünüyorsanız, bu değişiklikleri stash komutuyla geçici olarak saklayabilirsiniz. Böylece, başka bir branch'e geçtiğinizde bu değişiklikler gözükmez ve etkilemez. Eğer daha sonra bu değişiklikleri geri almak isterseniz, git stash pop komutuyla eski haline getirebilirsiniz.
+
+* Stash, özellikle henüz commit etmek istemediğiniz ancak diğer branch'e geçmeniz gerektiği durumlar için kullanışlıdır.
+
+
+
+>>
+

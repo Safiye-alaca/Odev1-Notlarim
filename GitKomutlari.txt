@@ -1,0 +1,141 @@
+>> ls:
+* Bu komut içerisinde bulunduğumuz klasörleri ve dosyaları göster anlamına geliyor.
+* Bir klasörün içerisinde ls çalıştırırsa bu sefer o klasörün içerisindeki dökümanları gösterir.
+
+
+>> cd:
+* Bu komut bir klasörün içerisine girmeyi sağlar.
+
+
+ >> pwd: 
+ * Güncel olarak bulunduğum klasörü göster demek.
+
+
+>> mkdir KlasorIsmi:
+* Bu desktopun içerisinde yeni bir klasör oluşturmayı sağlar.
+
+
+>> mr -rf KlasorIsmi
+* oluşturulan klasörü silmeyi sağlar.
+
+
+>> touch DosyaIsmi.txt:
+* Dosya oluşturma komutu. istenilen doya hangi formattaysa o formatta ismi girdikten sonra uzantısı yazılabilir.
+
+
+>> rm DosyaIsmi.txt:
+* Oluşturulan dosyayı silmeyi sağlar.
+
+
+>> git config--global user.name "İsim Soyisim" : 
+* Git'e kendi kullanıcı adımızı ve soyadımızı kaydetmeyi sağlar.
+
+
+>> git config user.name :
+* Kontrol edersek değiştiğini görebiliriz.
+
+
+>> git config--global user.email mailadresi@gmail.com :
+* E-mail'i kaydetmeyi sağlar
+
+
+>> git config user.email :
+* kontrol edersek değiştiğini görebiliriz.
+
+
+>> git status :
+* Git ile bağlantısının olup olmadığını bilmediğimiz klasörlerde, git status komutunu çalıştırarak o klasörün bir Git repository'si olup olmadığını ve içindeki dosyaların sürüm kontrolü durumunu kontrol edebiliriz. 
+
+
+>>git init :
+* klasöre git kurmak için kullanılır.
+
+
+>> ls -la :
+* git içerisindeki gizli dosyaları görmemizi sağlar.
+
+
+>> git add DosyaAdi.txt :
+* bu DosyaAdi adını verdiğim metin belgesini git içerisinde aktif etmeyi sağlar.
+* bununla tek tek dosyaların isimleri girilerek aktifleştirme işlemi yapılmalıdır.
+
+
+>> git commit -m "ilk commit atıldı." :
+* Bu şekilde commit atılarak yatıklarımızın yedekleri alınmış olunur.
+
+
+>> git log :
+* attığımız commitleri gösterir.
+* aynı zamanda commit attığımız ifadelerin hash değerlerini de gösterir.
+
+
+>> git add . :
+* tek tek dosyaları kaydetmek yerine hepsini bir anda kaydetmek istersek bu komut kullanılır.
+
+
+>> touch .gitignore :
+* gizli dosyalarımızı tutmak için oluşturulan bir dosya.
+* bu doyayı oluşturduktan sonra içine gizlmek istediğimiz dosyaların isimlerini .format'ları şeklinde yazarsak doyalar artık görnünmez sadece .gitignore dosyası git status de gözükür.
+
+
+>> git branch Ad :
+* Ad adında yeni bir branch açmamızı sağlayan komuttur.
+* bu açılan yeni branch içinde de commitler atılabilir.
+
+
+>> git branch :
+* mevcut olan branch'leri listeleyen komuttur.
+
+
+>> git switch master :
+* bu komutlada başka bir branch üzerinde çalışırken ana master'a geri diönmemizi sağlayan komuttur.
+* ya da master değil de başka bir branc ismi yazarsak o branch'e geçmemizi sağlar.
+
+
+>> git merge feat :
+* iki branch'i birleştirmemizi sağlayan komuttur.
+
+
+>> git stash :
+* yaptığımız ilemleri commitlemeden bir diğer branch'e geçmemize olanka tanır.
+
+
+
+>> git stash pop : 
+* yeniden bu değişiklikler almak istersek o zamna bu komutu çalıştırırı.
+
+
+
+>> git stash list :
+* stash olarak kaydettiğimiz şeylerin listesini döndürür.
+
+
+
+>> git stash apply stash@{0} :
+* stash'lenen ifadeler birden fazlaysa yukardaki komutu çalıştırmak bütün stash koutlarını getireceği için bu komutu kullanırız.
+* bu komutda da stash@{0} bu kısım stash'leri listelediğimizde bu stash değerlerinde bulunan ifadedir hangisini getirmek istiyorsak onun ilgili kısmı alınabilir.
+
+
+
+>> git stash clear :
+*  mevcut stash'er silinir.
+
+
+
+>>  git stash apply :
+* bulunduğumuz yere mevcut stashleri ekler ama git stash list yaptığımızda aynı zamnada listede de gözükür. Diğerlerinde stash'leri aktif ettikten sonra listeden kalkardı.
+
+
+
+>> git restore :
+üzerinde çalıştığınız dosyayı önceki bir duruma geri almanızı sağlar. Yani, bir dosyada yaptığınız değişiklikleri geri almak için kullanılır. Bu komut, son commit'e dönmenizi sağlar ve yaptığınız değişiklikleri geri alır (ama sadece çalışma alanındaki değişiklikleri, commit edilmiş olanları etkilemez).
+
+
+
+>> git checkout HashDeğeri :
+* bur bir commitdeyken bir başka commite geri ya da ileri gitmeyi sağlar.
+* bu kısımdaki hash değerini git log komutu çalıştırdıktan sonra karşımıza her commit'in yanında olacak şekilde görürüz.
+
+
+
+>> 
