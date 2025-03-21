@@ -1,4 +1,5 @@
->> ls:
+
++>> ls:
 * Bu komut içerisinde bulunduğumuz klasörleri ve dosyaları göster anlamına geliyor.
 * Bir klasörün içerisinde ls çalıştırırsa bu sefer o klasörün içerisindeki dökümanları gösterir.
 
@@ -138,4 +139,33 @@
 
 
 
->> 
+>> git reset commitHashDegeri :
+* commit silmeyi sağlar, içerik olarak değil birleştirme olarak yapılır bu işlem.
+
+
+
+>> git reset --hard commitHashDegeri Nedir?
+* hem commit'i siler hem de kodları siler 
+
+
+
+>> git revert commitHashDegeri :
+* bir commit’i geri almak için kullanırız ancak bu işlem commit’i tamamen silmek yerine yeni bir commit oluşturarak önceki commit’in etkisini tersine çevirir.
+
+
+
+>>git diff :
+* Bir dosyada yaptığınız değişiklikleri görmek için kullanılır.
+
+
+
+>> git merge master :
+* Bu komut, şu anda üzerinde çalıştığınız dal (örneğin feat) ile master dalını birleştirir. Bu işlemde master dalındaki tüm değişiklikler, aktif olduğunuz dal ile birleştirilir. Eğer master dalında yeni commit'ler varsa, bu commit'ler feat dalına dahil edilmiş olur. Bu komut, bir "merge commit" oluşturur.
+
+
+
+>> git rebase master :
+* Bu komut, aktif olduğunuz dalda (örneğin feat) yaptığınız tüm commit'leri, master dalının sonuna ekler.
+
+
+          --- git komutları bunlardan ibarettir ---

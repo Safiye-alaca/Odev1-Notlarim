@@ -1,0 +1,144 @@
+>> Github Nedir?
+Genel hatlarıyla git bir versiyon kontrol sistemiyken github daha çok projelerimizi depoladığımız bir yer olmuş olur
+
+  
+
+
+>> Pull Request (PR) Nedir?
+* GitHub’da bir branch’te yaptığın değişiklikleri ana branch’e eklemek için yapılan bir istektir.
+
+*  Başka biri kodu inceleyebilir, yorum yapabilir ve onayladıktan sonra değişiklikler birleştirilebilir (merge).
+
+* Takım çalışmasında kodların kontrol edilmesini ve hataların önlenmesini sağlar.
+
+* aynı zamanda Pull Request (PR) oluşturduğunda, GitHub sana iki branch arasındaki farkları gösterir.
+
+   - Hangi satırların eklendiğini, değiştirildiğini veya silindiğini detaylı olarak inceleyebilirsin.
+   - PR sayfasında, değişiklikleri satır satır karşılaştırabileceğin bir diff (fark) görüntüleyici bulunur.
+   - Böylece ekip arkadaşların kodu gözden geçirirken neyin değiştiğini net bir şekilde görebilir.
+
+
+
+
+
+>> Able to merge Nedir?
+* GitHub'da bir Pull Request (PR) açtığında gördüğün bir ifadedir ve şu anlama gelir:
+
+   - Çakışma (conflict) yok, yani branch’inizdeki değişiklikler  ana branch’e (örneğin main) sorunsuz bir şekilde birleştirilebilir (merge edilebilir).
+   - GitHub, değişikliklerin mevcut kod ile uyumlu olduğunu  kontrol eder ve otomatik birleştirme mümkünse "Able to merge" ibaresini gösterir.
+
+* Eğer "Not able to merge" yazıyorsa, çakışmalar (conflicts) vardır ve bunları manuel olarak çözmen gerekir. 🚀
+
+
+
+
+>> Draft (Taslak) Nedir?
+*bir Pull Request (PR) veya GitHub Issue oluştururken seçebileceğin bir durumdur.
+
+ - Draft PR açtığında, bu PR henüz tamamlanmamış demektir.
+ - Kodun hâlâ geliştirme aşamasında olduğunu gösterir ve ekip arkadaşlarına "Bu PR henüz hazır değil, üzerinde çalışıyorum" mesajı verir.
+ - Normal PR'lerden farkı, birleştirilemez (merge edilemez) durumda olmasıdır.
+
+*Tamamlandığında "Ready for review" (İncelemeye hazır) durumuna getirerek ekibinle paylaşabilirsin.
+
+
+
+
+>> git branch -r Nedir?
+Bu komut, uzak (remote) repoda bulunan branch'leri listeler. Yani, bilgisayarında olmayan ama uzak sunucuda (örneğin GitHub'da) bulunan branch’leri görmeni sağlar.
+
+  - Hangi branch'lerin uzakta olduğunu görmek için kullanırsın.
+  - Uzak branch'leri bilgisayarına çekmeden (fetch/pull yapmadan) önce var mı diye kontrol edebilirsin.
+  - Ekibinle çalışırken başkalarının açtığı branch’leri görmek için kullanabilirsin.
+
+
+
+
+>> Remote (Uzak) Branch Nedir?
+Remote branch (uzak dal), GitHub, GitLab veya Bitbucket gibi bir uzak sunucuda (remote repository) bulunan branch’tir. Yani senin bilgisayarında (local repo) değil, internet üzerindeki bir sunucuda saklanır.
+
+
+
+
+>> Remote Repository (Uzak Repo) Nedir?
+Git kullanırken, genellikle birden fazla kişiye açık bir depoya (örneğin GitHub) uzak repo denir. Bu repo, üzerinde herkesin katkıda bulunabileceği bir merkezi depodur.
+
+
+
+
+>> Local Repo (erel Depo) Nedir?
+Bu, senin bilgisayarında çalıştığın yerel (private) repodur. Yani, kendi bilgisayarındaki Git deposudur.
+
+
+
+
+>> origin Nedir?
+Git'te origin, varsayılan olarak uzak depoyı tanımlar. Yani, origin dediğimizde, uzak depoya referans veririz. Bu genellikle GitHub, GitLab veya Bitbucket gibi platformlardaki ana depo anlamına gelir.
+
+
+
+
+
+>> git fetch origin master Nedir?
+* Diyelim ki başka bir kişi uzak depoya (örneğin GitHub’daki repo'ya) bir şeyler commit etti ve master branch’inde bazı değişiklikler yaptı. Senin yerel bilgisayarındaki master branch’inde ise değişiklikler yok.
+
+* Şimdi, git fetch origin master komutunu çalıştırırsan:
+
+  - Bu komut origin (uzak repo) ile iletişime geçer ve uzak master branch'indeki değişiklikleri bilgisayarına indirir.
+  - Ancak, bu değişiklikler senin yerel branch'ine (kendi çalışma alanına) yansımaz. Yani, dosyalarındaki içerik hemen değişmez. Yalnızca uzak depodaki son durumu indirirsin.
+
+* Yani, git fetch origin master komutu şunları yapar:
+
+  - Uzak depodaki güncel veriyi indirir. Ancak bu veriyi senin çalışma alanına (working directory) aktarmaz.
+  - Yerel repo’daki master branch’in ile uzak repo’daki master branch’ini karşılaştırabilirsin, ancak kendi yerel koduna uygulamak için bir adım daha atman gerekecek.
+
+
+
+
+
+>> Fast-forward Merge Nedir?
+* Fast-forwarded terimi, Git'teki bir merge işlemi sırasında kullanılan bir kavramdır. Git, bir branch’i birleştirirken bazen doğrudan birleştirme yapabilir, yani herhangi bir karmaşık çakışma olmadan hızlı bir şekilde ilerleyebilir. Bu durumda fast-forward merge gerçekleşir.
+
+* Bir fast-forward merge, şu anlama gelir:
+
+  - Eğer bir branch üzerinde yapılan değişiklikler, diğer branch'in (örneğin master) son commit'inin tam bir devamıysa, yani commit geçmişinde dallanma yoksa, Git basitçe baştan sona bir geçiş yaparak yerel branch'i günceller.
+  - Yani, iki branch'in de bağımsız olarak farklı değişiklikler yapmadığı ve bir branch'in diğerinin devamı olduğu durumlarda fast-forward merge olur.
+
+* Nasıl Çalışır?
+  - Örneğin, master branch'in var ve üzerinde yapılan son commit'ten sonra feature-branch adında yeni bir branch oluşturup bazı değişiklikler yaptın.
+  - Feature branch'indeki commit'ler master branch'indeki commit'lerden sonra bir devam niteliği taşıyorsa, ve master branch'inde hiç yeni değişiklik yoksa, bu durumda fast-forward merge gerçekleşir.Feature branch'indeki commit
+
+
+
+
+
+>> git branch -r Nedir?
+* uzaktaki (remote) branch'leri listeler.
+ 
+* Hangi branch'lerin uzak depoda olduğunu görmeni sağlar.
+
+* Yerel branch'lerin uzaktaki branch'ler ile eşleşip eşleşmediğini kontrol edebilirsin.
+
+
+
+
+
+>> git checkout origin/master Nedir?
+* Git’te origin/master, uzak (remote) repodaki "master" branch'ini temsil eder.
+Ancak doğrudan origin/master'a checkout yapmak mümkün değildir çünkü bu, sadece okuma (read-only) bir referanstır. Bunun yerine, bu branch'in bir kopyasını alıp yerel bir branch olarak oluşturabilirsin.
+
+
+
+
+
+>> git clone <repo_link> Nedir?
+* uzaktaki (remote) bir Git deposunun (repository) tam bir kopyasını bilgisayarına indirmek için kullanılır.
+
+
+
+
+
+>> Fork Nedir?
+* Fork, bir GitHub (veya GitLab, Bitbucket gibi) reposunun tam bir kopyasını kendi hesabına almak demektir.
+* Bu sayede, orijinal repo bozulmadan kendi versiyonunu oluşturabilir ve bağımsız olarak geliştirme yapabilirsin.
+

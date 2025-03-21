@@ -82,5 +82,86 @@ Bir branch oluşturup üzerinde değişiklikler yaptıktan sonra, master branch'
 
 
 
->>
+>> git reset commitHashDegeri Nedir?
+* commit silmeyi sağlar
 
+* Özellikle birbirini tamamlayan commit’leri tek bir commit hâline getirmek için kullanılabilir. Burada amaç, commit içeriğini değil, commit ifadesini silmektir.
+
+
+
+>> git reset --hard commitHashDegeri Nedir?
+* hem commit'i siler hem de kodları siler 
+
+* tehlikeli bir kodtur. çakışmalara vs de yol açabilmektedir daha sonrasında.
+
+
+
+
+>> git revert commitHashDegeri Nedir?
+* bir commit’i geri almak için kullanırız ancak bu işlem commit’i tamamen silmek yerine yeni bir commit oluşturarak önceki commit’in etkisini tersine çevirir.
+
+* Diyelim ki bir commit yaptınız ancak bu satırı yanlışlıkla eklediğinizi fark ettiniz ve geri almak istiyorsunuz. Ama kod geçmişinizin bozulmasını da istemiyorsunuz. İşte burada kullanırsınız.
+
+
+
+>> git revert ve git reset Farkı:
+* git reset commit’i tamamen siler ve geri dönüşü zor olabilir.
+
+* git revert ise güvenlidir çünkü yalnızca hatayı yeni bir commit ile geri alır ve geçmişiniz bozulmaz.
+
+
+
+>> git diff Nedir?
+* bir dosyada yaptığınız değişiklikleri görmek için kullanılır.
+
+* Eğer bir dosyada değişiklik yaptıysanız ama henüz commit oluşturmadıysanız, git diff komutu size bu değişiklikleri önceki commit ile karşılaştırarak gösterir.
+
+
+
+
+>> git diff hash1 hash2 Nedir?
+* iki commit arasındaki değişiklikleri gösterir.
+
+* Değişen, eklenen veya silinen satırları karşılaştırır.
+
+
+
+>> git diff branch1 branch2 Nedir?
+* Branch'ler arasındaki farkları görmek için kullanılır.
+
+* Hangi dosyaların veya satırların değiştiğini karşılaştırır.
+
+
+
+>> Git Rebase Nedir?
+* Git rebase, bir branch'in (dalın) başka bir branch’e göre güncellenmesini sağlayan bir komuttur. Bunu, commit geçmişini temizlemek ve daha düzenli hale getirmek için kullanırız.
+
+* Mantığı Nedir?
+Diyelim ki bir projede çalışıyorsun ve feature-branch adında bir dal açtın. Burada kendi kodlarını yazarken, bu sırada main (veya master) dalına yeni commit’ler eklendi. Şimdi, kendi branch’ini bu en güncel haline uyarlamak istiyorsun.
+
+Bunu yapmak için rebase kullanırsan:
+
+ 1. Önce main dalındaki en güncel değişiklikleri alır.
+ 2. Sonrasında kendi branch’indeki commit’leri, sanki en baştan o yeni commit’lerin üzerine ekliyormuşsun gibi düzenler.
+ 3. Böylece commit geçmişi daha temiz olur, ekstra merge commit’leri oluşmaz.
+
+* Rebase Yaparken Dikkat Edilmesi Gerekenler:
+ - Eğer branch’i kimseyle paylaşmadıysan, rebase yapabilirsin, sorun olmaz.
+ - Ama başkalarıyla paylaştıysan, commit geçmişi değiştiği için karmaşa yaratabilir ve diğer geliştiriciler hata alabilir.
+
+
+
+
+>> Rebase ile Merge Arasındaki Fark Nedir?
+* Merge: Yeni değişiklikleri kendi dalına birleştirir ve ekstra bir merge commit’i oluşturur.
+
+* Rebase: Kendi commit’lerini güncellenmiş branch’in üstüne yeniden yazar ve geçmişi düzenli hale getirir.
+
+
+
+
+>> git rebase master Nedir?
+Bu komut, aktif olduğunuz dalda (örneğin feat) yaptığınız tüm commit'leri, master dalının sonuna ekler. Yani feat dalındaki commit'ler, master dalının üzerine "yeniden yerleştirilir" gibi düşünülür. Bu komut, commit geçmişini daha temiz hale getirir, çünkü git merge'deki gibi birleştirme commit'i oluşturmaz. Bu komutu, feat dalındayken çalıştırmanız gerektiğini unutmayın, çünkü bu komutun amacı master dalındaki değişiklikleri almak ve feat dalında yaptığı değişiklikleri, master'ın son commit'lerinin üzerine eklemektir.
+
+
+          --- git komutları bunlardan ibarettir --- 
